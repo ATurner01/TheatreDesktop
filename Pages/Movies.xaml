@@ -1,0 +1,17 @@
+﻿<Page x:Class="TheatreDesktop.Movies"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TheatreDesktop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Movies">
+
+    <Page.Content>
+        <Grid x:Name="movies" Style="{StaticResource BackgroundStyle}">
+            <TextBox x:Name="text1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Just imagine something is here" VerticalAlignment="Center" Width="184"/>
+            <Button x:Name="back" Content="Back" Click="back_Click" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Page.Content>
+</Page>
