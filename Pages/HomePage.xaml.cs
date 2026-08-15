@@ -22,13 +22,17 @@ namespace TheatreDesktop
         {
             InitializeComponent();
         }
-        public void OnMovieClick(object sender, RoutedEventArgs e)
+        private void OnMovieClick(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("Pages/Movies.xaml", UriKind.Relative));
         }
-
-        public void OnExitClick(object sender, RoutedEventArgs e)
+        private void OnAccountClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(new Uri("Pages/Account.xaml", UriKind.Relative));
+        }
+        private void OnExitClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }

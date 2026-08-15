@@ -11,7 +11,7 @@
     <Page.Content>
         <Grid x:Name="movies" Style="{StaticResource BackgroundStyle}">
             <TextBox x:Name="text1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Just imagine something is here" VerticalAlignment="Center" Width="184"/>
-            <Button x:Name="back" Content="Back" Click="back_Click" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="back" Content="Back" Click="Back_Click" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Page.Content>
 </Page>
