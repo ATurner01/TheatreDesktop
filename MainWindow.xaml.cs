@@ -20,5 +20,10 @@ namespace TheatreDesktop
         {
             InitializeComponent();
         }
+
+        public void OnExitClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
