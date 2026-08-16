@@ -9,14 +9,10 @@ namespace TheatreDesktop.ViewModel
         private bool disposed = false;
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ViewModelBase(string  displayName)
+        public ViewModelBase()
         {
-            DisplayName = displayName;
+            DisplayName = String.Empty;
             ThrowOnInvalidPropertyName = false;
-        }
-
-        public ViewModelBase() : this(string.Empty)
-        {
         }
 
         public void Dispose()
