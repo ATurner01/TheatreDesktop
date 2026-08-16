@@ -5,7 +5,7 @@
     /// </summary>
     abstract class PageViewModel : ViewModelBase
     {
-        protected CommandViewModel? CloseCommand { get; set; }
+        public CommandViewModel? CloseCommand { get; set; }
         public event EventHandler? CloseRequested;
 
         public PageViewModel()

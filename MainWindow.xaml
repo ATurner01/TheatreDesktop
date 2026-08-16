@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TheatreDesktop"
         mc:Ignorable="d"
         Title="Theatre App" Height="450" Width="800"
-        Source="/Pages/HomePage.xaml" WindowStartupLocation="CenterOwner"
+        Source="/Views/HomePage.xaml" 
+        WindowStartupLocation="CenterOwner"
         ShowsNavigationUI="False">
     
 </NavigationWindow>

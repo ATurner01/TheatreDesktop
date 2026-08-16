@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TheatreDesktop.ViewModel;
 
 namespace TheatreDesktop
 {
@@ -25,12 +27,12 @@ namespace TheatreDesktop
         private void OnMovieClick(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("Pages/Movies.xaml", UriKind.Relative));
+            nav.Navigate(new Uri("Views/Movies.xaml", UriKind.Relative));
         }
         private void OnAccountClick(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("Pages/Account.xaml", UriKind.Relative));
+            nav.Navigate(new Uri("Views/Account.xaml", UriKind.Relative));
         }
         private void OnExitClick(object sender, RoutedEventArgs e)
         {
