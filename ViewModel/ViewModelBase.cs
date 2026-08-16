@@ -4,8 +4,8 @@ namespace TheatreDesktop.ViewModel
 {
     internal abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
-        string DisplayName { get; set; }
-        bool ThrowOnInvalidPropertyName { get; set; }
+        protected string DisplayName { get; set; }
+        protected bool ThrowOnInvalidPropertyName { get; set; }
         private bool disposed = false;
         public event PropertyChangedEventHandler? PropertyChanged;
 
