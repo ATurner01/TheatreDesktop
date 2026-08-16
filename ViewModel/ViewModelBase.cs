@@ -2,6 +2,9 @@
 
 namespace TheatreDesktop.ViewModel
 {
+    /// <summary>
+    /// Abstract class to represent a ViewModel in the MVVM pattern. Implements INotifyPropertyChanged and IDisposable interfaces.
+    /// </summary>
     internal abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         protected string DisplayName { get; set; }
@@ -21,6 +24,10 @@ namespace TheatreDesktop.ViewModel
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes the ViewModel and releases any resources. If disposing is true, it also releases managed resources.
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void OnDispose(bool disposing)
         {
             if (!this.disposed)
@@ -39,8 +46,12 @@ namespace TheatreDesktop.ViewModel
             this.VerifyPropertyName(propertyName);
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        
 
+        /// <summary>
+        /// Verifies that the specified property name exists in the ViewModel. If the property name is invalid, it either throws an exception or triggers a debug failure based on the ThrowOnInvalidPropertyName flag.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <exception cref="Exception"></exception>
         public void VerifyPropertyName(string propertyName)
         {
             if (TypeDescriptor.GetProperties(this)[propertyName] == null)
