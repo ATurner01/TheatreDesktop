@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 
-
 namespace TheatreDesktop.ViewModel
 {
     internal abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
