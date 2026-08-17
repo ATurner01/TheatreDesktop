@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace TheatreDesktop.ViewModel
+namespace TheatreDesktop.Services
 {
     /// <summary>
     /// A command that relays its functionality to other objects by invoking delegates. The default return value for the CanExecute method is 'true'.
