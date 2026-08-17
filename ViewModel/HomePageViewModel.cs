@@ -44,5 +44,19 @@ namespace TheatreDesktop.ViewModel
         {
             _navigationService.NavigateTo(pageKey);
         }
+
+        protected override void OnDispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    Navigate = null;
+                    DataPath = String.Empty;
+                }
+                // Also need to make sure DB connections are closed here once implemented
+                base.OnDispose(disposing);
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace TheatreDesktop.ViewModel
     {
         protected string DisplayName { get; set; }
         protected bool ThrowOnInvalidPropertyName { get; set; }
-        private bool disposed = false;
+        protected bool disposed = false;
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ViewModelBase()
