@@ -26,18 +26,9 @@ namespace TheatreDesktop
             string path = "temp";
             var dialogService = new DialogService();
             var applicationService = new ApplicationService();
-            DataContext = new HomePageViewModel(applicationService, dialogService, path);
+            var navigationService = new NavigationServiceHelper(this);
+            DataContext = new HomePageViewModel(applicationService, dialogService, navigationService, path);
             InitializeComponent();
-        }
-        private void OnMovieClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("Views/Movies.xaml", UriKind.Relative));
-        }
-        private void OnAccountClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("Views/Account.xaml", UriKind.Relative));
         }
     }
 }
