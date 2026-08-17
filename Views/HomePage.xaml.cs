@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TheatreDesktop.ViewModel;
+using TheatreDesktop.Services;
 
 namespace TheatreDesktop
 {
@@ -20,13 +21,12 @@ namespace TheatreDesktop
     /// </summary>
     public partial class HomePage : Page
     {
-        protected HomePageViewModel ViewModel { get; set; }
         public HomePage()
         {
             string path = "temp";
-            ViewModel = new HomePageViewModel(path);
-            ViewModel.RequestClose += delegate { OnClose(); };
-            DataContext = ViewModel;
+            var dialogService = new DialogService();
+            var applicationService = new ApplicationService();
+            DataContext = new HomePageViewModel(applicationService, dialogService, path);
             InitializeComponent();
         }
         private void OnMovieClick(object sender, RoutedEventArgs e)
@@ -38,19 +38,6 @@ namespace TheatreDesktop
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("Views/Account.xaml", UriKind.Relative));
-        }
-        private static void OnClose()
-        {
-            var result = MessageBox.Show(
-                "Are you sure you want to exit?",
-                "Confirm Exit",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                Application.Current.Shutdown();
-            }
         }
     }
 }
