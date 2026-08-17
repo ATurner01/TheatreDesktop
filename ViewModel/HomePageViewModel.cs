@@ -55,7 +55,7 @@ namespace TheatreDesktop.ViewModel
                     DataPath = String.Empty;
                 }
                 // Also need to make sure DB connections are closed here once implemented
-                base.OnDispose(disposing);
+                base.OnDispose(disposing); // Call the base class OnDispose *after* this class so that the disposed flag is set correctly
             }
         }
     }
