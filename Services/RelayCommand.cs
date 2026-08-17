@@ -36,6 +36,10 @@ namespace TheatreDesktop.Services
         }
     }
 
+    /// <summary>
+    /// A modified version of RelayCommand that accepts a Generic Type parameter for passing arguments along with the specified Action.
+    /// </summary>
+    /// <typeparam name="T">The Type parameter which refers to the argument type of the Action.</typeparam>
     public class RelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute;
