@@ -10,7 +10,7 @@ namespace TheatreDesktop.ViewModel
         private readonly INavigationService _navigationService;
 
         public string? DataPath { get; private set; }
-        public ICommand Navigate { get; private set; }
+        public ICommand? Navigate { get; private set; }
 
         public HomePageViewModel(IApplicationService applicationService, IDialogService dialogService, INavigationService navigationService, string? dataPath = null)
         {
