@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TheatreDesktop.Pages
+namespace TheatreDesktop.Views
 {
     /// <summary>
     /// Interaction logic for Account.xaml

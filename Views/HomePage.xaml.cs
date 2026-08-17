@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using TheatreDesktop.ViewModel;
 using TheatreDesktop.Services;
 
-namespace TheatreDesktop
+namespace TheatreDesktop.Views
 {
     /// <summary>
     /// Interaction logic for HomePage.xaml
