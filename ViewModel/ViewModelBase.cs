@@ -5,7 +5,7 @@ namespace TheatreDesktop.ViewModel
     /// <summary>
     /// Abstract class to represent a ViewModel in the MVVM pattern. Implements INotifyPropertyChanged and IDisposable interfaces.
     /// </summary>
-    internal abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
+    public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         protected string DisplayName { get; set; }
         protected bool ThrowOnInvalidPropertyName { get; set; }

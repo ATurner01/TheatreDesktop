@@ -1,6 +1,6 @@
 ﻿namespace TheatreDesktop.ViewModel
 {
-    class HomePageViewModel : PageViewModel
+    public class HomePageViewModel : PageViewModel
     {
         private string? DataPath { get; set; }
 
@@ -12,6 +12,11 @@
             DataPath = dataPath;
             base.DisplayName = "Homepage";
             this.CloseCommand = new CommandViewModel("Close", new RelayCommand(param => OnRequestClose()));
+        }
+
+        public override void OnRequestClose()
+        {
+            base.OnRequestClose();
         }
     }
 }

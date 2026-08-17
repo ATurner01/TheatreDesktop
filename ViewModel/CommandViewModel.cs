@@ -5,7 +5,7 @@ namespace TheatreDesktop.ViewModel
     /// <summary>
     /// Represents a command in the MVVM pattern. It encapsulates an ICommand and provides a display name for the command.
     /// </summary>
-    class CommandViewModel : ViewModelBase
+    public class CommandViewModel : ViewModelBase
     {
         public ICommand Command { get; private set; }
         public CommandViewModel(string displayName, ICommand command)

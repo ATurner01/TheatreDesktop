@@ -20,8 +20,13 @@ namespace TheatreDesktop
     /// </summary>
     public partial class HomePage : Page
     {
+        protected HomePageViewModel ViewModel { get; set; }
         public HomePage()
         {
+            string path = "temp";
+            ViewModel = new HomePageViewModel(path);
+            ViewModel.RequestClose += delegate { OnClose(); };
+            DataContext = ViewModel;
             InitializeComponent();
         }
         private void OnMovieClick(object sender, RoutedEventArgs e)
@@ -34,9 +39,18 @@ namespace TheatreDesktop
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("Views/Account.xaml", UriKind.Relative));
         }
-        private void OnExitClick(object sender, RoutedEventArgs e)
+        private static void OnClose()
         {
-            Application.Current.Shutdown();
+            var result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Confirm Exit",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }
