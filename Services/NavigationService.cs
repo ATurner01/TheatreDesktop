@@ -1,21 +1,45 @@
 ﻿using System.Windows;
 using System.Windows.Navigation;
+using System.Windows.Controls;
+using Microsoft.Extensions.DependencyInjection;
+using TheatreDesktop.ViewModel;
+using TheatreDesktop.Views;
 
 namespace TheatreDesktop.Services
 {
     public class NavigationServiceHelper : INavigationService
     {
-        private readonly DependencyObject _page;
-        public NavigationServiceHelper(DependencyObject page)
+        private readonly INavigationHost _navigationHost;
+        private readonly IServiceProvider _serviceProvider;
+
+        private readonly Dictionary<Type, Type> _viewMappings = new()
         {
-            _page = page;
+            { typeof(HomePageViewModel), typeof(HomePage) }
+        };
+
+        public NavigationServiceHelper(INavigationHost navigationHost, IServiceProvider serviceProvider)
+        {
+            _navigationHost = navigationHost;
+            _serviceProvider = serviceProvider;
         }
 
-        public void NavigateTo(string? pageKey)
+        public void NavigateTo<TViewModel>()
         {
-            ArgumentNullException.ThrowIfNull(pageKey, nameof(pageKey));
-            NavigationService nav = NavigationService.GetNavigationService(_page);
-            nav.Navigate(new Uri(pageKey, UriKind.Relative));
+            var page = ResolvePage<TViewModel>();
+            _navigationHost.Navigate(page);
+        }
+
+        private Page ResolvePage<TViewModel>()
+        {
+            var viewModelType = typeof(TViewModel);
+
+            if (!_viewMappings.TryGetValue(viewModelType, out var pageType))
+            {
+                throw new InvalidOperationException(
+                    $"No page is registered for ViewModel '{viewModelType.Name}'.");
+            }
+
+            return (Page)_serviceProvider.GetRequiredService(pageType);
         }
     }
 }

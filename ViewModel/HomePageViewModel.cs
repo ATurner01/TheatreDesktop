@@ -5,19 +5,17 @@ namespace TheatreDesktop.ViewModel
 {
     public class HomePageViewModel : PageViewModel
     {
-        private readonly IDialogService _dialogService;
-        private readonly IApplicationService _applicationService;
-        private readonly INavigationService _navigationService;
-
+        protected readonly IDialogService _dialogService;
         public string? DataPath { get; private set; }
-        public ICommand? Navigate { get; private set; }
+        public ICommand? MoviesCommand { get; private set; }
+        public ICommand? AccountCommand { get; private set; }
 
-        public HomePageViewModel(IApplicationService applicationService, IDialogService dialogService, INavigationService navigationService, string? dataPath = null)
+        public HomePageViewModel(INavigationService navigationService, IApplicationService applicationService,
+                                IDialogService dialogService, string? dataPath = null)
+                : base(navigationService, applicationService)
         {
             DataPath = dataPath;
-            _applicationService = applicationService;
             _dialogService = dialogService;
-            _navigationService = navigationService;
             base.DisplayName = "Homepage";
             RegisterCommands();
         }
@@ -25,7 +23,8 @@ namespace TheatreDesktop.ViewModel
         private void RegisterCommands()
         {
             CloseCommand = new RelayCommand(Exit);
-            Navigate = new RelayCommand<string>(NavigateTo);
+            MoviesCommand = null;
+            AccountCommand = null;
         }
 
         private void Exit()
@@ -36,13 +35,8 @@ namespace TheatreDesktop.ViewModel
 
             if (confirmed)
             {
-                _applicationService.Shutdown();
+                ApplicationService.Shutdown();
             }
-        }
-
-        private void NavigateTo(string? pageKey)
-        {
-            _navigationService.NavigateTo(pageKey);
         }
 
         protected override void OnDispose(bool disposing)
@@ -51,8 +45,9 @@ namespace TheatreDesktop.ViewModel
             {
                 if (disposing)
                 {
-                    Navigate = null;
                     DataPath = String.Empty;
+                    MoviesCommand = null;
+                    AccountCommand = null;
                 }
                 // Also need to make sure DB connections are closed here once implemented
                 base.OnDispose(disposing); // Call the base class OnDispose *after* this class so that the disposed flag is set correctly

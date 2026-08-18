@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using TheatreDesktop.Services;
 
 namespace TheatreDesktop.ViewModel
 {
@@ -8,8 +9,12 @@ namespace TheatreDesktop.ViewModel
     public abstract class PageViewModel : ViewModelBase
     {
         public ICommand? CloseCommand { get; set; }
-        public PageViewModel()
+        protected static INavigationService NavigationServiceHelper { get; set; }
+        protected static IApplicationService ApplicationService { get; set; }
+        public PageViewModel(INavigationService navigationService, IApplicationService applicationService)
         {
+            NavigationServiceHelper = navigationService;
+            ApplicationService = applicationService;
         }
     }
 }

@@ -21,13 +21,9 @@ namespace TheatreDesktop.Views
     /// </summary>
     public partial class HomePage : Page
     {
-        public HomePage()
+        public HomePage(HomePageViewModel viewModel)
         {
-            string path = "temp";
-            var dialogService = new DialogService();
-            var applicationService = new ApplicationService();
-            var navigationService = new NavigationServiceHelper(this);
-            DataContext = new HomePageViewModel(applicationService, dialogService, navigationService, path);
+            DataContext = viewModel;
             InitializeComponent();
         }
     }
