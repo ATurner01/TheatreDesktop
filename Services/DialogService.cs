@@ -12,5 +12,15 @@ namespace TheatreDesktop.Services
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes;
         }
+
+        public bool ShowMessage(string message, string title)
+        {
+            MessageBox.Show(
+                message,
+                title,
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+            return true;
+        }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using TheatreDesktop.Services;
 using TheatreDesktop.ViewModel;
 
-
 namespace TheatreDesktop
 {
     /// <summary>
