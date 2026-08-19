@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using TheatreDesktop.ViewModel;
 
 namespace TheatreDesktop.Views
 {
@@ -8,9 +7,8 @@ namespace TheatreDesktop.Views
     /// </summary>
     public partial class Movies : Page
     {
-        public Movies(MovieViewModel viewModel)
+        public Movies()
         {
-            DataContext = viewModel;
             InitializeComponent();
         }
     }

@@ -25,7 +25,21 @@ namespace TheatreDesktop.Services
 
         public void NavigateTo<TViewModel>()
         {
+            var viewModel = _serviceProvider.GetService<TViewModel>();
             var page = ResolvePage<TViewModel>();
+            page.DataContext = viewModel;
+            _navigationHost.Navigate(page);
+        }
+
+        public void NavigateTo<TViewModel, TParameter>(TParameter parameter)
+        {
+            ArgumentNullException.ThrowIfNull(parameter, nameof(parameter));
+            var viewModel = ActivatorUtilities.CreateInstance<TViewModel>(
+                _serviceProvider,
+                parameter);
+
+            var page = ResolvePage<TViewModel>();
+            page.DataContext = viewModel;
             _navigationHost.Navigate(page);
         }
 
