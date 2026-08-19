@@ -27,9 +27,13 @@ namespace TheatreDesktop
 
             // ViewModels
             services.AddTransient<HomePageViewModel>();
+            services.AddTransient<MovieViewModel>();
+            services.AddTransient<AccountViewModel>();
 
             // Views
             services.AddTransient<HomePage>();
+            services.AddTransient<Movies>();
+            services.AddTransient<Account>();
 
             // Main window
             services.AddSingleton<MainWindow>();

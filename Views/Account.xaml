@@ -4,13 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TheatreDesktop.Views"
+      xmlns:viewModels="clr-namespace:TheatreDesktop.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      d:DataContext="{d:DesignInstance Type=viewModels:AccountViewModel}"
       Title="Account">
 
     <Grid Style="{StaticResource BackgroundStyle}">
         <TextBox x:Name="text1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="And you thought things would be here" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="back" Content="Back" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Click="Back_Click"/>
+        <Button x:Name="back" Content="Back" Command="{Binding Path=HomeCommand}" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

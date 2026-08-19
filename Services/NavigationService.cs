@@ -14,7 +14,9 @@ namespace TheatreDesktop.Services
 
         private readonly Dictionary<Type, Type> _viewMappings = new()
         {
-            { typeof(HomePageViewModel), typeof(HomePage) }
+            { typeof(HomePageViewModel), typeof(HomePage) },
+            { typeof(MovieViewModel), typeof(Movies) },
+            { typeof(AccountViewModel), typeof(Account) }
         };
 
         public NavigationServiceHelper(INavigationHost navigationHost, IServiceProvider serviceProvider)

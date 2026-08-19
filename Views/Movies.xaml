@@ -4,14 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TheatreDesktop"
+      xmlns:viewModel="clr-namespace:TheatreDesktop.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      d:DataContext="{d:DesignInstance Type=viewModel:MovieViewModel}"
       Title="Movies">
 
     <Page.Content>
         <Grid x:Name="movies" Style="{StaticResource BackgroundStyle}">
             <TextBox x:Name="text1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Just imagine something is here" VerticalAlignment="Center" Width="184"/>
-            <Button x:Name="back" Content="Back" Click="Back_Click" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="back" Content="Back" Command="{Binding Path=HomeCommand}" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Page.Content>
 </Page>

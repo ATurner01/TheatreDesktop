@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using TheatreDesktop.ViewModel;
 
 namespace TheatreDesktop.Views
 {
@@ -18,14 +8,10 @@ namespace TheatreDesktop.Views
     /// </summary>
     public partial class Account : Page
     {
-        public Account()
+        public Account(AccountViewModel viewModel)
         {
+            DataContext = viewModel;
             InitializeComponent();
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
         }
     }
 }

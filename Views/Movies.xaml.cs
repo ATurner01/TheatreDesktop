@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TheatreDesktop.ViewModel;
 
 namespace TheatreDesktop.Views
 {
@@ -18,14 +19,10 @@ namespace TheatreDesktop.Views
     /// </summary>
     public partial class Movies : Page
     {
-        public Movies()
+        public Movies(MovieViewModel viewModel)
         {
+            DataContext = viewModel;
             InitializeComponent();
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
         }
     }
 }

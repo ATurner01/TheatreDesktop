@@ -23,8 +23,8 @@ namespace TheatreDesktop.ViewModel
         private void RegisterCommands()
         {
             CloseCommand = new RelayCommand(Exit);
-            MoviesCommand = null;
-            AccountCommand = null;
+            MoviesCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<MovieViewModel>);
+            AccountCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<AccountViewModel>);
         }
 
         private void Exit()
