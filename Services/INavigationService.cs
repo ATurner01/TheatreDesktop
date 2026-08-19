@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-
-namespace TheatreDesktop.Services
+﻿namespace TheatreDesktop.Services
 {
     public interface INavigationService
     {

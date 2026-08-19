@@ -1,6 +1,5 @@
 ﻿using System.Windows.Navigation;
 using System.Windows.Controls;
-using TheatreDesktop.Views;
 using TheatreDesktop.Services;
 
 namespace TheatreDesktop

@@ -1,6 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Navigation;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using TheatreDesktop.ViewModel;
 using TheatreDesktop.Views;

@@ -1,10 +1,8 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using TheatreDesktop.Services;
 using TheatreDesktop.ViewModel;
-using TheatreDesktop.Views;
+
 
 namespace TheatreDesktop
 {
