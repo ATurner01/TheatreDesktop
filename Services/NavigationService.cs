@@ -43,6 +43,12 @@ namespace TheatreDesktop.Services
             _navigationHost.Navigate(page);
         }
 
+        public void GoBack()
+        {
+            _navigationHost.GoBack();
+        }
+        public bool CanGoBack => _navigationHost.CanGoBack;
+
         private Page ResolvePage<TViewModel>()
         {
             var viewModelType = typeof(TViewModel);

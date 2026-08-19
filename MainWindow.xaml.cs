@@ -18,5 +18,13 @@ namespace TheatreDesktop
         {
             base.Navigate(page);
         }
+
+        public void GoBack()
+        {
+            if (CanGoBack)
+            {
+                base.GoBack();
+            }
+        }
     }
 }

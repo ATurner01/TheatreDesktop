@@ -11,7 +11,7 @@ namespace TheatreDesktop.ViewModel
             : base(navigationService, applicationService)
         {
             DisplayName = "Account";
-            HomeCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<HomePageViewModel>);
+            HomeCommand = new RelayCommand(NavigationServiceHelper.GoBack);
         }
     }
 }

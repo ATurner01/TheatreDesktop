@@ -4,5 +4,7 @@
     {
         public void NavigateTo<TViewModel>();
         public void NavigateTo<TViewModel, TParameter>(TParameter parameter);
+        public void GoBack();
+        public bool CanGoBack { get; }
     }
 }

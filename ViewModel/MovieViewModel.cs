@@ -11,7 +11,7 @@ namespace TheatreDesktop.ViewModel
             : base(navigationService, applicationService)
         {
             DisplayName = "Movies";
-            HomeCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<HomePageViewModel>);
+            HomeCommand = new RelayCommand(NavigationServiceHelper.GoBack);
         }
     }
 }
