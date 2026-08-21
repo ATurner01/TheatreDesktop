@@ -14,7 +14,8 @@ namespace TheatreDesktop.Services
         {
             { typeof(HomePageViewModel), typeof(HomePage) },
             { typeof(MovieViewModel), typeof(Movies) },
-            { typeof(AccountViewModel), typeof(Account) }
+            { typeof(AccountViewModel), typeof(Account) },
+            { typeof(SettingsViewModel), typeof(Settings) }
         };
 
         public NavigationServiceHelper(INavigationHost navigationHost, IServiceProvider serviceProvider)

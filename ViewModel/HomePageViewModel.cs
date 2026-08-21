@@ -26,7 +26,7 @@ namespace TheatreDesktop.ViewModel
             CloseCommand = new RelayCommand(Exit);
             MoviesCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<MovieViewModel>);
             AccountCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<AccountViewModel>);
-            SettingsCommand = new RelayCommand(Settings);
+            SettingsCommand = new RelayCommand(NavigationServiceHelper.NavigateTo<SettingsViewModel>);
         }
 
         private void Exit()
@@ -39,13 +39,6 @@ namespace TheatreDesktop.ViewModel
             {
                 ApplicationService.Shutdown();
             }
-        }
-
-        private void Settings()
-        {
-            bool _ = _dialogService.ShowMessage(
-                "Settings are not yet implemented.",
-                "Settings");
         }
 
         protected override void OnDispose(bool disposing)
